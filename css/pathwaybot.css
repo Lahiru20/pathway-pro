@@ -1,0 +1,333 @@
+
+  .sphere {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 30%;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+    box-shadow:
+      0 0 50px 5px rgba(0, 0, 0, 0.5),
+      inset 0 0 40px rgba(255, 255, 255, 0.5),
+      inset 0 -20px 50px rgba(0, 0, 0, 0.2);
+    z-index: 50;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .sphere:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+  
+  .sphere:hover .lava {
+    filter: blur(20px);
+  }
+  
+  .sphere:hover .lava::before,
+  .sphere:hover .lava::after {
+    animation-duration: 3s;
+  }
+  
+  .sphere::before {
+    content: '';
+    position: absolute;
+    top: 45%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 30px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 3px;
+    box-shadow: 30px 0 0 rgba(255, 255, 255, 1);
+    z-index: 60;
+    animation: 
+      blink 4s infinite,
+      lookAround 10s infinite ease-in-out;
+  }
+  
+  .sphere::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 50%;
+      box-shadow: 0 0 60px rgba(255, 255, 255, 0.1);
+      animation: glowPulse 2s ease-in-out infinite;  /* Changed from 4s to 2s for more natural heartbeat rhythm */
+    }
+  
+  .lava {
+    filter: blur(25px);
+    position: relative;
+    top: 15vh;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 100px;
+    z-index: 10;
+    opacity: 1;
+    mix-blend-mode: screen;
+    animation: colorShift 20s infinite linear;
+  }
+  
+  .lava::before {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: 
+      radial-gradient(circle at 30% 30%, #0066ff 0%, transparent 45%),
+      radial-gradient(circle at 70% 30%, #ff00cc 0%, transparent 45%),
+      radial-gradient(circle at 50% 60%, #00ff99 0%, transparent 45%),
+      radial-gradient(circle at 80% 40%, #ff3300 0%, transparent 45%);
+    filter: blur(8px);
+    opacity: 1;
+    mix-blend-mode: screen;
+  }
+  
+  .lava::after {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: 
+      radial-gradient(circle at 40% 40%, #0066ff 0%, transparent 35%),
+      radial-gradient(circle at 60% 40%, #ff00cc 0%, transparent 35%),
+      radial-gradient(circle at 50% 70%, #00ff99 0%, transparent 35%),
+      radial-gradient(circle at 70% 50%, #ff3300 0%, transparent 35%);
+    filter: blur(12px);
+    opacity: 1;
+    mix-blend-mode: screen;
+    animation: pulse 4s ease-in-out infinite alternate;
+  }
+  
+  /* Startup animations */
+  .sphere.startup {
+      animation: startupSphere 2s ease-out;
+      opacity: 0;
+      animation-fill-mode: forwards;
+    }
+    
+    .lava.startup {
+      animation: startupLava 2s ease-out;
+      opacity: 0;
+      animation-fill-mode: forwards;
+    }
+  
+    .wave-container {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;  /* Increased width to accommodate more bars */
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3px;  /* Reduced gap to fit more bars */
+    }
+    
+    .wave {
+      width: 2px;  /* Thinner bars */
+      height: 20px;
+      background: rgba(255, 255, 255, 0.5);
+      animation: wave 0.5s ease-in-out infinite;  /* Faster animation */
+      border-radius: 2px;
+    }
+  
+    .text-container {
+      position: absolute;
+      bottom: 25%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      text-align: center;
+      z-index: 40;
+  }
+  
+  .floating-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-family: Arial, sans-serif;
+    font-size: 1.8em; /* Increased from 1.2em */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  
+  @keyframes textFade {
+      0%, 100% { opacity: 0; }
+      10%, 90% { opacity: 1; }
+  }
+    
+    /* Create 20 waves with different delays and heights */
+    @keyframes wave {
+      0%, 100% {
+        height: calc(5px + (var(--i) * 2px));
+        background: rgba(255, 255, 255, 0.2);
+      }
+      50% {
+        height: calc(15px + (var(--i) * 3px));
+        background: rgba(255, 255, 255, 0.8);
+      }
+    }
+    
+    /* Individual wave animations */
+    .wave:nth-child(1) { --i: 1; animation-delay: -0.45s; }
+    .wave:nth-child(2) { --i: 2; animation-delay: -0.4s; }
+    .wave:nth-child(3) { --i: 3; animation-delay: -0.35s; }
+    .wave:nth-child(4) { --i: 4; animation-delay: -0.3s; }
+    .wave:nth-child(5) { --i: 5; animation-delay: -0.25s; }
+    .wave:nth-child(6) { --i: 4; animation-delay: -0.2s; }
+    .wave:nth-child(7) { --i: 3; animation-delay: -0.15s; }
+    .wave:nth-child(8) { --i: 2; animation-delay: -0.1s; }
+    .wave:nth-child(9) { --i: 1; animation-delay: -0.05s; }
+    .wave:nth-child(10) { --i: 2; animation-delay: 0s; }
+    .wave:nth-child(11) { --i: 3; animation-delay: -0.45s; }
+    .wave:nth-child(12) { --i: 4; animation-delay: -0.4s; }
+    .wave:nth-child(13) { --i: 5; animation-delay: -0.35s; }
+    .wave:nth-child(14) { --i: 4; animation-delay: -0.3s; }
+    .wave:nth-child(15) { --i: 3; animation-delay: -0.25s; }
+    .wave:nth-child(16) { --i: 2; animation-delay: -0.2s; }
+    .wave:nth-child(17) { --i: 1; animation-delay: -0.15s; }
+    .wave:nth-child(18) { --i: 2; animation-delay: -0.1s; }
+    .wave:nth-child(19) { --i: 3; animation-delay: -0.05s; }
+    .wave:nth-child(20) { --i: 4; animation-delay: 0s; }
+    
+    
+    /* Optional: Add a gradient mask to fade the edges */
+    .wave-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(0, 0, 0, 0) 10%,
+        rgba(0, 0, 0, 0) 90%,
+        transparent 100%
+      );
+      pointer-events: none;
+    }  
+    
+    @keyframes startupSphere {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+        filter: brightness(0);
+      }
+      50% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1.1);
+        filter: brightness(0.5);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        filter: brightness(1);
+        animation: float 6s ease-in-out infinite;
+      }
+    }
+    
+    @keyframes startupLava {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+      }
+      50% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }  
+  
+  @keyframes blink {
+    0%, 96% { height: 30px; }
+    98% { height: 3px; }
+    100% { height: 30px; }
+  }
+  
+  @keyframes lookAround {
+    0%, 40% { 
+      left: 47%;
+      box-shadow: 30px 0 0 rgba(255, 255, 255, 1);
+    }
+    45% { 
+      left: 40%;
+      box-shadow: 30px 0 0 rgba(255, 255, 255, 1);
+    }
+    55% { 
+      left: 40%;
+      box-shadow: 30px 0 0 rgba(255, 255, 255, 1);
+    }
+    60% { 
+      left: 54%;
+      box-shadow: 30px 0 0 rgba(255, 255, 255, 1);
+    }
+    70% { 
+      left: 54%;
+      box-shadow: 30px 0 0 rgba(255, 255, 255, 1);
+    }
+    75% {
+      left: 47%;
+      box-shadow: 30px 0 0 rgba(255, 255, 255, 1);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translate(-50%, -50%);
+    }
+    50% {
+      transform: translate(-50%, calc(-50% - 10px));
+    }
+  }
+  
+  @keyframes colorShift {
+    0% {
+      filter: blur(25px) hue-rotate(0deg);
+    }
+    100% {
+      filter: blur(25px) hue-rotate(360deg);
+    }
+  }
+  
+  @keyframes glowPulse {
+      0%, 100% {
+        box-shadow: 0 0 60px rgba(255, 255, 255, 0.1);
+      }
+      45% {
+        box-shadow: 0 0 80px rgba(255, 255, 255, 0.2);
+      }
+      50% {
+        box-shadow: 0 0 70px rgba(255, 255, 255, 0.15);
+      }
+      55% {
+        box-shadow: 0 0 85px rgba(255, 255, 255, 0.2);
+      }
+      60% {
+        box-shadow: 0 0 60px rgba(255, 255, 255, 0.1);
+      }
+    }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.9;
+    }
+    100% {
+      transform: scale(1.15);
+      opacity: 1;
+    }
+  }
+  
