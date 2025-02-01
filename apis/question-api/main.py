@@ -35,9 +35,24 @@ def get_questions():
         for q in filtered_questions:
             if q['questionNumber'] == question_Number:
                 new_filtered_questions.append(q)  
-        filtered_questions = new_filtered_questions  
+        filtered_questions = new_filtered_questions
+
 
     return jsonify(filtered_questions)
+
+
+@app.route('/search-questions', methods=['GET'])
+def search_questions():
+    query = request.args.get('query', '').lower()
+    if not query:
+        return jsonify({"error": "Query parameter is empty"}), 400
+    
+    filtered_questions = [q for q in model.question_model if query in q['question'].lower()]
+    
+    if filtered_questions:
+        return jsonify(filtered_questions)
+    else:
+        return jsonify({"message": "No matching questions found"}), 404
 
 
 if __name__ == "__main__":
