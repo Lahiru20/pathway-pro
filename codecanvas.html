@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathwayPro - Your Interview Companion</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1.5.0/css/pico.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/dracula.min.css">
+    <link rel="stylesheet" href="css/code_canvas.css">
+</head>
+
+<body>
+
+    <div id="main-div">
+
+        <div class="blob-outer-container">
+            <div class="blob-inner-container">
+                <div class="blob"></div>
+            </div>
+        </div>
+    
+    
+        <div class="navbar">
+            
+            <nav>
+                <button class="hamburger" onclick="toggleNavbar()">☰</button>
+                <ul>
+                    <li id="website-brand"><img class="website-brand-image" src="img/pathwaypro_logo.png"></li>
+                </ul>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <div class="code_canvas-div">
+            <h2>CodeCanvas</h2>
+            <div class="container">
+                <div class="toolbar">
+                    <div class="dropdowns">
+                        <label for="language">Language:</label>
+                        <select id="language">
+                            <option value="?=programmingLanguage=Java" selected>Java</option>
+                            <option value="?=programmingLanguage=Python">Python</option>
+                            <option value="?=programmingLanguage=C++">C++</option>
+                        </select>
+            
+                        <label for="level">Level:</label>
+                        <select id="level">
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+            
+                    <div class="search-container">
+                        <input type="text" id="search-bar" placeholder="Search questions..." />
+                    </div>
+                </div>
+
+                                <div class="table-container">
+                    <table id="questions-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Question</th>
+                                <th>Difficulty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Questions will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
+            
+                <div class="question-title" id="selected-question">
+                    Select a question from the table above to solve it here..
+                </div>
+            
+                <div class="code-editor">
+                    <textarea id="code" placeholder="Write your code here..."></textarea>
+                </div>
+            
+                <div class="buttons">
+                    <button class="compile-run" id="compile-run-button">Compile and Run</button>
+                    <button class="confirm" id="confirm-button">Confirm</button>
+                </div>
+            
+                <div id="compile-output" class="compile-output"></div>
+            </div>
+            </div>
+        </div>
+
+
+    
+    </div>
+
+</div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/clike/clike.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/python/python.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/addon/hint/show-hint.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/addon/hint/show-hint.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/addon/hint/anyword-hint.min.js"></script>
+<script src="js/codecanvas.js"></script>
+</body>
+</html>

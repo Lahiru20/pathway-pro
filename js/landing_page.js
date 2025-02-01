@@ -21,11 +21,22 @@ function toggleNavbar() {
 
 const mouseScroll = document.querySelector('.mouse_scroll');
 const pageHeight = document.documentElement.scrollHeight;
+const backtotop = document.getElementById('backtotop_click');
 
 window.addEventListener('scroll', () => {
     if(window.scrollY >  (pageHeight - 1000)){
         mouseScroll.style.display = 'none';
-    }else{
-        mouseScroll.style.display = 'block'
+        if(mouseScroll.style.display = 'none'){
+            backtotop.style.display = 'block'
+        }else{
+            backtotop.style.display = 'none'
+        }
+    }
+});
+
+
+window.addEventListener('scroll', () => {
+    if(window.scrollY < 2000){
+        backtotop.style.display = 'none';
     }
 });
