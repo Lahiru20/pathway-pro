@@ -8,6 +8,8 @@ body {
     background-size: 300% 300%;
     animation: gradient 10s ease infinite;
     scroll-behavior: smooth;
+    zoom: 0.9;
+
 }
 
 @keyframes gradient {
@@ -222,7 +224,6 @@ body {
 
 .how-it-works {
     text-align: center;
-    border-radius: 8px;
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, .25);
     border-radius: 20px;
@@ -688,6 +689,18 @@ footer p{
 .backtotop:hover {
     transform: scale(1.05); 
   }
+
+  .btn-green{
+    background-color: #48a34d !important; 
+    color: white;
+  }
+
+  .btn-green:hover{
+    background-color: #2c9531 !important; 
+    color: white;
+  }
+
+
 
 
 

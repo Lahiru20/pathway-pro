@@ -15,10 +15,6 @@ function toggleNavbar() {
 
 }
 
-
-
-
-
 const mouseScroll = document.querySelector('.mouse_scroll');
 const pageHeight = document.documentElement.scrollHeight;
 const backtotop = document.getElementById('backtotop_click');

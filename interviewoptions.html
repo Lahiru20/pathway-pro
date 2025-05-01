@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathwayPro - Your Interview Companion</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.5.6/css/pico.min.css">
+    <link rel="stylesheet" href="css/index_styles.css">
+    <link rel="stylesheet" href="css/pathway_bot.css">
+</head>
+
+<body>
+
+    <div id="main-div">
+
+        <div class="blob-outer-container">
+            <div class="blob-inner-container">
+                <div class="blob"></div>
+            </div>
+        </div>
+
+
+        <div class="navbar">
+
+            <nav>
+                <button class="hamburger" onclick="toggleNavbar()">☰</button>
+                <ul>
+                    <li id="website-brand"><img class="website-brand-image" src="img/pathwaypro_logo.png"></li>
+                </ul>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="">PathwayBOT</a></li>
+                    <li><a href="codecanvas.html">CodeCanvas</a></li>
+                    <li><a href="">Support</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+
+        <div class="container" style="height: 87vh;">
+
+            <div class="hero" style="zoom: 0.8;">
+                <h2>Select Interview Preferences</h2>
+                <form>
+                    <label for="candidateName">Candidate Name:</label>
+                    <input type="text" id="candidateName" name="candidateName" required>
+                    <br>
+
+                    <label for="language">Programming Language:</label>
+                    <select id="language" name="language" required>
+                        <option value="Python">Python</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="Java">Java</option>
+                        <option value="C++">C++</option>
+                    </select>
+                    <br>
+
+                    <label for="difficulty">Select Difficulty:</label>
+                    <select id="difficulty" name="difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                    <br>
+
+                    <label for="interviewTime">Select Interview Time:</label>
+                    <select id="interviewTime" name="interviewTime">
+                        <option value="30mins">30 minutes</option>
+                        <option value="40mins">40 minutes</option>
+                        <option value="1hour">1 hour</option>
+                        <option value="2hour">2 hour</option>
+                    </select>
+                    <br>
+
+                    <button id="submit-button" type="submit">Generate Interview</button>
+                </form>
+            </div>
+</body>
+
+<script src="js/interview_generation.js"></script>
+
+</html>

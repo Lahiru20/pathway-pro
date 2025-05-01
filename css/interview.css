@@ -1,0 +1,124 @@
+#question-container, #summary-container {
+    text-align: center;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 20px;
+    background-color: rgba(31, 31, 31, 0.25);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+    padding: 30px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.interview-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.bot-side {
+    flex: 0 0 250px;
+}
+
+.question-side {
+    flex: 1;
+    text-align: left;
+}
+
+.bot-container {
+    position: relative;
+    top: 50px;
+    height: 250px;
+    width: 250px;
+}
+
+.lava {
+    position: relative !important;
+    top: 175px !important;
+}
+
+textarea {
+    width: 100%;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 20px;
+    background-color: rgba(31, 31, 31, 0.25);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+    color: #fff;
+    padding: 15px;
+}
+
+button {
+    margin-top: 20px;
+    background-color: #0066ff;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0061e6;
+}
+
+#analyze-btn {
+    background-color: #48a34d;
+    border-color: #48a34d;
+}
+
+#analyze-btn:hover {
+    background-color: #2c9531;
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: 20px;
+}
+
+.timer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.question-count {
+    font-size: 1.1em;
+}
+
+#timer {
+    font-weight: bold;
+    color: #0066ff;
+    font-size: 1.2em;
+    padding: 5px 15px;
+    border-radius: 20px;
+    background-color: rgba(0, 102, 255, 0.1);
+}
+
+pre {
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .interview-layout {
+        flex-direction: column;
+    }
+    
+    .bot-side {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .bot-container {
+        height: 150px;
+        width: 150px;
+    }
+}
