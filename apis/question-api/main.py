@@ -84,7 +84,7 @@ def codecanvas():
         response = requests.post(
             url="https://openrouter.ai/api/v1/chat/completions",
             headers={
-                "Authorization": "Bearer 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",
+                "Authorization": "",
                 "Content-Type": "application/json"
             },
             data=json.dumps({
@@ -97,7 +97,7 @@ def codecanvas():
             timeout=30 
         )
         response.raise_for_status()
-        
+
         openrouter_response = response.json()
         content = openrouter_response['choices'][0]['message']['content']
 
@@ -165,7 +165,7 @@ def generate_interview():
         response = requests.post(
             url="https://openrouter.ai/api/v1/chat/completions",
             headers={
-                "Authorization": "Bearer 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",
+                "Authorization": "",
                 "Content-Type": "application/json"
             },
             data=json.dumps({
