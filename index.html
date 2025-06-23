@@ -1,187 +1,231 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PathwayPro - Your Interview Companion</title>
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.5.6/css/pico.min.css">
-    <link rel="stylesheet" href="css/index_styles.css">
-    <link rel="stylesheet" href="css/pathway_bot.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@picocss/pico@1.5.6/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="css/index_styles.css" />
+    <link rel="stylesheet" href="css/pathway_bot.css" />
+  </head>
 
-<body>
-
+  <body>
     <div id="main-div">
+      <div class="blob-outer-container">
+        <div class="blob-inner-container">
+          <div class="blob"></div>
+        </div>
+      </div>
 
-        <div class="blob-outer-container">
-            <div class="blob-inner-container">
-                <div class="blob"></div>
-            </div>
-        </div>
-    
-    
-        <div class="navbar">
-            
-            <nav>
-                <button class="hamburger" onclick="toggleNavbar()">☰</button>
-                <ul>
-                    <li id="website-brand"><img class="website-brand-image" src="img/pathwaypro_logo.png"></li>
-                </ul>
-                <ul>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#how-it-works">How It Works</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                </ul>
-            </nav>
-        </div>
-        
-    
-    
-    
-    
-        <div class="container">
-    
-    
-        
-    
-            <div class="hero">
-                <div class="bot-container">
-                    <div class="lava startup"></div>
-                    <div class="sphere startup"></div>
-                </div>
-                <div class="hero-content">
-                    <h1>Hi there, ready to master your SE Technical interviews?</h1>
-                    <p>Practice with AI-driven Technical interviews and technical questions to help you prepare for success.</p>
-                    <div class="cta-buttons">
-                        <a role="button" class="contrast" href="interviewmode.html"><img src="img/pathwaypro_logo.png" width="25px" height="25px" alt="">&nbsp;Start Practicing</a>
-                        <a role="button" class="btn-learn-more" href="#features"><img src="img/info_icon.png" width="25px" height="25px" alt="">&nbsp;&nbsp;Learn More&nbsp;</a>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="features" id="features">
-                <h2>Why Choose PathwayPro?</h2>
-                <div class="grid">
-                    <article>
-                        <h3>Practice Interview</h3>
-                        <p>Simulate real-world interviews with our AI-powered system.</p>
-                    </article>
-                    <article>
-                        <h3>Question Preparation</h3>
-                        <p>Practice technical questions designed to strengthen your skills.</p>
-                    </article>
-                    <article>
-                        <h3>Detailed Feedback</h3>
-                        <p>Get actionable insights to improve your interview performance.</p>
-                    </article>
-                </div>
-            </div>
-    
-            <div class="how-it-works" id="how-it-works">
-                <h2>How It Works</h2>
-                <div class="grid">
-                    <article>
-                        <h3>Get Started</h3>
-                        <p>Select your Practice scenario based on your goals.</p>
-                    </article>
-                    <article>
-                        <h3>Practice Interviews</h3>
-                        <p>Experience realistic mock interviews powered by our AI based system or Practice technical questions to prepare for your next big opportunity</p>
-                    </article>
-                    <article>
-                        <h3>Receive Feedback</h3>
-                        <p>Get actionable insights to improve your performance.</p>
-                    </article>
-                </div>
-            </div>
-    
-            <div class="testimonials" id="testimonials">
-                <h2>What Our Users Say</h2>
-                <blockquote>
-                    <p>"PathwayPro helped me land my dream job! The mock interviews were realistic and the feedback was invaluable."</p>
-                    <p class="tes-provider">- Maduka Malshan, Software Engineer</p>
-                </blockquote>
-                <blockquote>
-                    <p>"I love how personalized the experience is. PathwayPro made me feel confident and prepared for my interviews."</p>
-                    <p class="tes-provider">- Ruvindu Sharadha, Developer</p>
-                </blockquote>
-            </div>
-    
-            <div class="faq" id="faq">
-                <h2>Frequently Asked Questions</h2>
-                <details>
-                    <summary>What is this platform about?</summary>
-                    <p>Our platform helps software engineers prepare for technical interviews through AI-driven mock interviews, practice questions, and an integrated coding environment with real-time feedback from PathwayBot.</p>
-                </details>
-                <details>
-                    <summary>What languages are currently supported?</summary>
-                    <p>We support Java and Python. More languages will be added soon to provide a diverse coding practice experience</p>
-                </details>
-                <details>
-                    <summary>What is PathwayBot?</summary>
-                    <p>PathwayBot is your personal AI assistant that provides real-time feedback on your code during practice interviews. It helps improve your solutions by suggesting optimizations and identifying potential errors.</p>
-                </details>
-                <details>
-                    <summary>Can I practice without an AI-driven interview?</summary>
-                    <p>Yes! You can access a wide range of practice questions in our dedicated Practice Questions section and solve them at your own pace.</p>
-                </details>
-                <details>
-                    <summary>Is this platform suitable for beginners?</summary>
-                    <p>Absolutely. Our platform is designed to cater to software engineers at all levels, from beginners to experienced professionals preparing for advanced technical interviews.</p>
-                </details>
-                <details>
-                    <summary>How can I provide feedback or request new features?</summary>
-                    <p>We value your feedback! You can share your suggestions and requests through the Contact section available on our platform.</p>
-                </details>
-    
-    
-            </div>
-    
-            <div class="contact" id="contact">
-                <h2>Contact Us</h2>
-                <form>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-    
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-    
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-    
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-        </div>
-    
+      <div class="navbar">
+        <nav>
+          <button class="hamburger" onclick="toggleNavbar()">☰</button>
+          <ul>
+            <li id="website-brand">
+              <img class="website-brand-image" src="img/pathwaypro_logo.png" />
+            </li>
+          </ul>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
 
-    
-        <div class="mouse_scroll">
-    
-            <div class="mouse">
-                <div class="wheel"></div>
+      <div class="container">
+        <div class="hero">
+          <div class="bot-container">
+            <div class="lava startup"></div>
+            <div class="sphere startup"></div>
+          </div>
+          <div class="hero-content">
+            <h1>Hi there, ready to master your SE Technical interviews?</h1>
+            <p>
+              Practice with AI-driven Technical interviews and technical
+              questions to help you prepare for success.
+            </p>
+            <div class="cta-buttons">
+              <a role="button" class="contrast" href="interviewmode.html"
+                ><img
+                  src="img/pathwaypro_logo.png"
+                  width="25px"
+                  height="25px"
+                  alt=""
+                />&nbsp;Start Practicing</a
+              >
+              <a role="button" class="btn-learn-more" href="#features"
+                ><img
+                  src="img/info_icon.png"
+                  width="25px"
+                  height="25px"
+                  alt=""
+                />&nbsp;&nbsp;Learn More&nbsp;</a
+              >
             </div>
-            <div>
-                <span class="m_scroll_arrows unu"></span>
-                <span class="m_scroll_arrows doi"></span>
-                <span class="m_scroll_arrows trei"></span>
-            </div>
+          </div>
         </div>
+
+        <div class="features" id="features">
+          <h2>Why Choose PathwayPro?</h2>
+          <div class="grid">
+            <article>
+              <h3>Practice Interview</h3>
+              <p>Simulate real-world interviews with our AI-powered system.</p>
+            </article>
+            <article>
+              <h3>Question Preparation</h3>
+              <p>
+                Practice technical questions designed to strengthen your skills.
+              </p>
+            </article>
+            <article>
+              <h3>Detailed Feedback</h3>
+              <p>
+                Get actionable insights to improve your interview performance.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <div class="how-it-works" id="how-it-works">
+          <h2>How It Works</h2>
+          <div class="grid">
+            <article>
+              <h3>Get Started</h3>
+              <p>Select your Practice scenario based on your goals.</p>
+            </article>
+            <article>
+              <h3>Practice Interviews</h3>
+              <p>
+                Experience realistic mock interviews powered by our AI based
+                system or Practice technical questions to prepare for your next
+                big opportunity
+              </p>
+            </article>
+            <article>
+              <h3>Receive Feedback</h3>
+              <p>Get actionable insights to improve your performance.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="testimonials" id="testimonials">
+          <h2>What Our Users Say</h2>
+          <blockquote>
+            <p>
+              "PathwayPro helped me land my dream job! The mock interviews were
+              realistic and the feedback was invaluable."
+            </p>
+            <p class="tes-provider">- Maduka Malshan, Software Engineer</p>
+          </blockquote>
+          <blockquote>
+            <p>
+              "I love how personalized the experience is. PathwayPro made me
+              feel confident and prepared for my interviews."
+            </p>
+            <p class="tes-provider">- Ruvindu Sharadha, Developer</p>
+          </blockquote>
+        </div>
+
+        <div class="faq" id="faq">
+          <h2>Frequently Asked Questions</h2>
+          <details>
+            <summary>What is this platform about?</summary>
+            <p>
+              Our platform helps software engineers prepare for technical
+              interviews through AI-driven mock interviews, practice questions,
+              and an integrated coding environment with real-time feedback from
+              PathwayBot.
+            </p>
+          </details>
+          <details>
+            <summary>What languages are currently supported?</summary>
+            <p>
+              We support Java and Python. More languages will be added soon to
+              provide a diverse coding practice experience
+            </p>
+          </details>
+          <details>
+            <summary>What is PathwayBot?</summary>
+            <p>
+              PathwayBot is your personal AI assistant that provides real-time
+              feedback on your code during practice interviews. It helps improve
+              your solutions by suggesting optimizations and identifying
+              potential errors.
+            </p>
+          </details>
+          <details>
+            <summary>Can I practice without an AI-driven interview?</summary>
+            <p>
+              Yes! You can access a wide range of practice questions in our
+              dedicated Practice Questions section and solve them at your own
+              pace.
+            </p>
+          </details>
+          <details>
+            <summary>Is this platform suitable for beginners?</summary>
+            <p>
+              Absolutely. Our platform is designed to cater to software
+              engineers at all levels, from beginners to experienced
+              professionals preparing for advanced technical interviews.
+            </p>
+          </details>
+          <details>
+            <summary>
+              How can I provide feedback or request new features?
+            </summary>
+            <p>
+              We value your feedback! You can share your suggestions and
+              requests through the Contact section available on our platform.
+            </p>
+          </details>
+        </div>
+
+        <div class="contact" id="contact">
+          <h2>Contact Us</h2>
+          <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="mouse_scroll">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+        <div>
+          <span class="m_scroll_arrows unu"></span>
+          <span class="m_scroll_arrows doi"></span>
+          <span class="m_scroll_arrows trei"></span>
+        </div>
+      </div>
     </div>
 
-        <a class="backtotop" id="backtotop_click" href="#main-div"><img src="img/back_to_top.png"></a>
-
+    <a class="backtotop" id="backtotop_click" href="#main-div"
+      ><img src="img/back_to_top.png"
+    /></a>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 PathwayPro. All rights reserved.</p>
-        </div>
-
+      <div class="footer-content">
+        <p>&copy; 2025 PathwayPro. All rights reserved.</p>
+      </div>
     </footer>
 
     <script src="js/landing_page.js"></script>
-    
-</body>
+  </body>
 </html>
