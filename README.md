@@ -2,6 +2,10 @@
 
 PathwayPro is an innovative platform designed to help software engineers excel in technical interviews. Featuring AI-driven mock interviews, an extensive library of practice questions, and an integrated code editor with live testing and feedback, PathwayPro provides everything you need to prepare for coding challenges and technical rounds.
 
+![Local Image](./img/home.png)
+![Local Image](./img/codecanvas.png)
+![Local Image](./img/interview.png)
+
 ## Features
 
 - **AI-Driven Interviews**  
