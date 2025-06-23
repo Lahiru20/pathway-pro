@@ -34,7 +34,7 @@ PathwayPro is an innovative platform designed to help software engineers excel i
 
 1. **Clone the Repository**  
    ```bash
-   git clone https://github.com/your-username/PathwayPro.git
+   git clone https://github.com/Lahiru20/PathwayPro.git
    cd PathwayPro
    ```
 
