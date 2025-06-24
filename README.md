@@ -55,11 +55,8 @@ PathwayPro is an innovative platform designed to help software engineers excel i
    python app.py
    ```
 
-   If using Spring Boot:
-   ```bash
-   cd backend
-   ./gradlew bootRun
-   ```
+   Add openrouter credentials to relavant in main.py
+
 
 5. **Start the Application**  
    Open the `index.html` file in your browser and ensure the backend server is running for full functionality.
